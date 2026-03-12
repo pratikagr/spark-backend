@@ -6,7 +6,6 @@ import userRoutes from "./routes/userRoutes.js";
 import likeRoutes from "./routes/likeRoutes.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
 import eventRoutes from "./routes/eventRoutes.js";
-import verifyRoutes from "./routes/verifyRoutes.js";
 import express from "express";
 import cors from "cors";
 
@@ -50,7 +49,6 @@ app.use("/api/users", userRoutes);
 app.use("/api/messages", messageRoutes);
 app.use("/api/like", likeRoutes);
 app.use("/api/upload", uploadRoutes);
-app.use("/api/verify", verifyRoutes);
 app.use("/events", eventRoutes);
 
 export default app;
