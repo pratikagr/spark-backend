@@ -25,17 +25,13 @@ export const swipeUser = async (req, res) => {
 
     // RIGHT SWIPE
     if (direction === "right") {
-      console.log("CURRENT USER ID FROM BODY:", currentUserId);
-      console.log("TARGET USER ID:", targetUserId);
       currentUser.likedUsers.push(targetUserId);
       await currentUser.save();
 
       const freshTargetUser = await User.findById(targetUserId);
-      console.log("FRESH TARGET LIKED USERS:", freshTargetUser.likedUsers);
-      console.log("CHECKING IF TARGET LIKED CURRENT:", currentUserId);
 
       // Use .some() instead of .includes() for ObjectId comparison
-      const isMutual = targetUser.likedUsers.some(
+      const isMutual = freshTargetUser.likedUsers.some(
         (id) => id.toString() === currentUserId.toString(),
       );
 
