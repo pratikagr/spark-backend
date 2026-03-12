@@ -3,13 +3,10 @@ dotenv.config();
 import connectDB from "./src/config/db.js";
 import app from "./src/app.js";
 import User from "./src/models/User.js";
-import { loadModels } from "./src/config/faceRecongition.js";
 import { createServer } from "http";
 import { initSocket } from "./src/config/socket.js";
 
 connectDB();
-await loadModels();
-console.log("Face models loaded");
 
 const PORT = process.env.PORT || 8000;
 
