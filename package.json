@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "build": "npm rebuild canvas --update-binary",
     "dev": "nodemon server.js",
     "start": "node server.js"
   },
@@ -11,7 +12,6 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "canvas": "^3.2.1",
     "cloudinary": "^2.9.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",
