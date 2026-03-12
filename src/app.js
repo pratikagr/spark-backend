@@ -19,9 +19,8 @@ app.use(
       // Allow cloudflare tunnels + localhost
       if (
         !origin ||
-        origin.includes("trycloudflare.com") ||
         origin.includes("localhost") ||
-        origin.includes("ngrok-free.app")
+        origin.includes("railway.app")
       ) {
         callback(null, true);
       } else {
