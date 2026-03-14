@@ -5,6 +5,7 @@ import messageRoutes from "./routes/messageRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import likeRoutes from "./routes/likeRoutes.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
+import adminRoutes from "./routes/adminRoutes.js";
 import eventRoutes from "./routes/eventRoutes.js";
 import express from "express";
 import cors from "cors";
@@ -49,5 +50,6 @@ app.use("/api/messages", messageRoutes);
 app.use("/api/like", likeRoutes);
 app.use("/api/upload", uploadRoutes);
 app.use("/events", eventRoutes);
+app.use("/admin", adminRoutes);
 
 export default app;
