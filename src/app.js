@@ -20,7 +20,8 @@ app.use(
       if (
         !origin ||
         origin.includes("localhost") ||
-        origin.includes("railway.app")
+        origin.includes("railway.app") ||
+        origin.includes("vercel.app")
       ) {
         callback(null, true);
       } else {
