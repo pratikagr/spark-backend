@@ -1,6 +1,6 @@
 import Admin from "../models/Admin.js";
 import Match from "../models/Match.js";
-import Event from "../models/Event.js";
+import Event from "../models/Events.js";
 import UserEvent from "../models/UserEvent.js";
 import jwt from "jsonwebtoken";
 

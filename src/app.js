@@ -17,7 +17,6 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: (origin, callback) => {
-      // Allow cloudflare tunnels + localhost
       if (
         !origin ||
         origin.includes("localhost") ||
@@ -32,11 +31,6 @@ app.use(
   }),
 );
 app.use(express.json());
-
-app.use((req, res, next) => {
-  res.setHeader("ngrok-skip-browser-warning", "true");
-  next();
-});
 
 // Test route
 app.get("/", (req, res) => {
