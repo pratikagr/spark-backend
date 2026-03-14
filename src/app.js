@@ -13,6 +13,16 @@ const app = express();
 
 app.use(cookieParser());
 
+app.get("/admin/seed", async (req, res) => {
+  try {
+    const Admin = (await import("./src/models/Admin.js")).default;
+    await Admin.create({ username: "admin", password: "password" });
+    res.json({ message: "Admin created" });
+  } catch (err) {
+    res.json({ error: err.message });
+  }
+});
+
 app.use(
   cors({
     origin: (origin, callback) => {
