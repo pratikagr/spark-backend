@@ -15,7 +15,7 @@ app.use(cookieParser());
 
 app.get("/admin/seed", async (req, res) => {
   try {
-    const Admin = (await import("./src/models/Admin.js")).default;
+    const Admin = (await import("./models/Admin.js")).default;
     await Admin.create({ username: "admin", password: "password" });
     res.json({ message: "Admin created" });
   } catch (err) {
